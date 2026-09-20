@@ -90,3 +90,15 @@ can we write two final methods that have same name ans same parametres one in pa
 No, you cannot. If a parent class has a final method, a child class cannot declare a method with the exact same name and parameters.
 If you try to do this in Java (or similar OOP languages), the compiler will throw an error (e.g., "Cannot override the final method from Parent").
 */
+
+/*
+Yes, you can! If a parent class has a method marked as private final, a child class can still define a method with the exact same name and parameters without any compilation error.
+
+Why does this work?
+The private modifier wins: Because the method is private, it is completely invisible to the child class. The child class does not inherit it.
+It's not an override: Since the child cannot see the parent's method, the compiler treats the child's method as a brand-new, independent method, not an override attempt.
+The role of final here: Putting final on a private method is actually redundant in Java. A private method can never be overridden anyway because subclasses don't have access to it, 
+so adding final changes nothing.
+
+ok so override is only when its public or protected
+*/
