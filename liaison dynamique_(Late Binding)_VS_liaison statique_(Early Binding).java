@@ -72,3 +72,13 @@ public class TestLiaison {
         // Raison : C'est la seule qui utilise la liaison dynamique (late binding) et suit le type de l'objet (Fille).
     }
 }
+
+
+
+
+
+/*
+1. For public / protected methods (Without @Override)
+If you have a normal public method and you write it in the child class without @Override, it is still a true method override (dynamic binding). 
+The compiler sees a method with the exact same signature in the parent and child, so it links them together, and the child's version will still execute when you use new Fille().
+*/
