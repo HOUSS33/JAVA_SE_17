@@ -16,3 +16,17 @@ durant la compilation, la méthode choisie est celle dictée par le type de la r
 
 À l'exécution (Le choix dynamique) : Si la compilation passe, Java regarde le véritable objet (new). S'il y a un @Override, il exécute la version de l'enfant ; sinon, 
 il exécute par défaut la version du parent trouvée à la compilation.
+
+
+
+
+
+1. Ceux qui permettent le polymorphisme dynamique (Objet réel)
+public, protected, et default (package-private) : Ce sont les méthodes d'instance classiques. Si elles ne sont pas marquées comme final, elles acceptent la liaison dynamique. C'est l'objet réel (new) qui décide quelle version exécuter.
+
+2. Ceux qui bloquent le polymorphisme (Toujours le type de la référence)
+private : La méthode n'est même pas héritée. La classe fille ne la voit pas, elle crée juste une méthode complètement indépendante si elle utilise le même nom. C'est lié au type de la référence.
+
+static : C'est le masquage (hiding), pas la redéfinition. La méthode appartient à la classe, pas à l'objet. C'est résolu statiquement par le type de la référence (comme on l'a vu avec a.hello()).
+
+final : Le compilateur interdit formellement de surcharger (@Override) une méthode final. Elle est figée, donc la liaison est statique (ou résolue directement sans ambiguïté).
