@@ -10,3 +10,9 @@ Le petit piège venait du type de la variable : private int nombre = 100;. Comme
 
 
 durant la compilation, la méthode choisie est celle dictée par le type de la référence, et durant l'exécution, si la méthode a été redéfinie (@Override), c'est la version de l'objet réel (new) qui s'exécute !
+
+
+À la compilation (La barrière de sécurité) : Le compilateur regarde uniquement le type de la référence. Si la méthode n'existe pas dans cette classe, c'est erreur de compilation immédiate (peu importe ce que contient l'objet derrière).
+
+À l'exécution (Le choix dynamique) : Si la compilation passe, Java regarde le véritable objet (new). S'il y a un @Override, il exécute la version de l'enfant ; sinon, 
+il exécute par défaut la version du parent trouvée à la compilation.
