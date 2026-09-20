@@ -1,0 +1,3 @@
+if a method is public/protected/default and i write it in both parent and child class and in the child class i didn't write @Override  is  considerered override 
+
+and if the method is private its not
