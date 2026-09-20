@@ -82,3 +82,11 @@ public class TestLiaison {
 If you have a normal public method and you write it in the child class without @Override, it is still a true method override (dynamic binding). 
 The compiler sees a method with the exact same signature in the parent and child, so it links them together, and the child's version will still execute when you use new Fille().
 */
+
+
+/*
+can we write two final methods that have same name ans same parametres one in parent and the others in children ?
+
+No, you cannot. If a parent class has a final method, a child class cannot declare a method with the exact same name and parameters.
+If you try to do this in Java (or similar OOP languages), the compiler will throw an error (e.g., "Cannot override the final method from Parent").
+*/
