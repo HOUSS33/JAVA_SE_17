@@ -3,3 +3,7 @@ if a method is public/protected/default and i write it in both parent and child 
 and if the method is private its not
 
 quand aux gerement des attributs c est tous par type de reference car fait durant compilation
+
+
+Le petit piège venait du type de la variable : private int nombre = 100;. Comme c'est un type primitif (int), sa valeur par défaut avant d'être initialisé est 0 (et non null, qui n'existe que pour les objets). Le bloc d'initialisation du parent s'exécutant avant l'affectation de nombre, la variable valait 0.
+🔍 Correction de l'Exercice 12
